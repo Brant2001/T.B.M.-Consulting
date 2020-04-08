@@ -2,6 +2,7 @@ import { getEmployees, useEmployees } from "./EmployeeDataProvider.js";
 import { useComputers } from "../computers/ComputerDataProvider.js";
 import { Employee } from "./Employee.js";
 import { useDepartments } from "../departments/DepartmentDataProvider.js";
+import { useLocations } from "../locations/LocationsDataProvider.js";
 
 const contentTarget = document.querySelector(".employeesContainer");
 
@@ -10,6 +11,7 @@ const render = () => {
     const allTheEmployees = useEmployees();
     const allTheComputers = useComputers();
     const allTheDepartments = useDepartments();
+    const allTheLocations = useLocations()
 
     contentTarget.innerHTML = allTheEmployees
       .map((currentEmployeeObject) => {
@@ -27,14 +29,16 @@ const render = () => {
             );
           }
         );
-        const employeeHTML = Employee(
-          currentEmployeeObject,
-          theFoundComputer,
-          theFoundDepartment
+        const theFoundLocation = allTheLocations.find(
+          (currentLocationObject) => {
+            return (
+              currentEmployeeObject.locationId === currentLocationObject.id
+            );
+          }
         );
-        return employeeHTML;
-      })
-      .join("");
+        const employeeHTML = Employee(currentEmployeeObject, theFoundComputer, theFoundDepartment, theFoundLocation)
+        return employeeHTML
+      }).join("");  
   });
 };
 
