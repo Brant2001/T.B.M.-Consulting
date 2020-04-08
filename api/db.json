@@ -1,4 +1,51 @@
 {
+    "employees": [
+        {
+            "id": 1,
+            "firstName": "Rainu",
+            "lastName": "Ittycheriah",
+            "age": "11",
+            "computerId": 1,
+            "departmentId": 3,
+            "locationId": 2
+        },
+        {
+            "id": 1,
+            "firstName": "Tom",
+            "lastName": "Thompson",
+            "age": "22",
+            "computerId": 2,
+            "departmentId": 4,
+            "locationId": 3
+        },
+        {
+            "id": 1,
+            "firstName": "Richard(Dick)",
+            "lastName": "Richardson",
+            "age": "33",
+            "computerId": 3,
+            "departmentId": 3,
+            "locationId": 2
+        },
+        {
+            "id": 1,
+            "firstName": "Harry",
+            "lastName": "Harrison",
+            "age": "44",
+            "computerId": 4,
+            "departmentId": 2,
+            "locationId": 3
+        },
+        {
+            "id": 1,
+            "firstName": "Brant",
+            "lastName": "Pippin",
+            "age": "18",
+            "computerId": 5,
+            "departmentId": 1,
+            "locationId": 1
+        }
+    ],
     "computers": [
         {
             "id": 1,
@@ -26,48 +73,6 @@
             "year": 2019
         }
     ],
-    "employees": [
-        {
-            "id": 1,
-            "firstName": "Rainu",
-            "lastName": "Ittycheriah",
-            "age": "11",
-            "computerId": 1,
-            "departmentId": 3
-        },
-        {
-            "id": 1,
-            "firstName": "Tom",
-            "lastName": "Thompson",
-            "age": "22",
-            "computerId": 2,
-            "departmentId": 4
-        },
-        {
-            "id": 1,
-            "firstName": "Richard(Dick)",
-            "lastName": "Richardson",
-            "age": "33",
-            "computerId": 3,
-            "departmentId": 3
-        },
-        {
-            "id": 1,
-            "firstName": "Harry",
-            "lastName": "Harrison",
-            "age": "44",
-            "computerId": 4,
-            "departmentId": 2
-        },
-        {
-            "id": 1,
-            "firstName": "Brant",
-            "lastName": "Pippin",
-            "age": "18",
-            "computerId": 5,
-            "departmentId": 1
-        }
-    ],
     "departments": [
         {
             "id": 1,
@@ -84,6 +89,20 @@
         {
             "id": 4,
             "name": "Quality Assurance"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "city": "Nashville"
+        },
+        {
+            "id": 2,
+            "city": "Knoxville"
+        },
+        {
+            "id": 3,
+            "city": "Chattanooga"
         }
     ]
 }
