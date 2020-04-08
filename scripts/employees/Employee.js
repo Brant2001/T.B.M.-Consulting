@@ -1,12 +1,18 @@
-export const Employee = (employeeObject, computer) => {
+export const Employee = (employeeObject, computer, department) => {
     return `
         <div class="employee">
-            <header>
-                <h3>${employeeObject.firstName} ${employeeObject.lastName}</h3>
+            <header class="employee__name">
+                <h1>${employeeObject.firstName} ${employeeObject.lastName}</h1>
             </header>
-            <p>Age: ${employeeObject.age}</p>
-            <p>Computer: ${computer.model}</p>
-            <p>Man Year: ${computer.year}</p>
+            <section class="employee__age">
+                ${employeeObject.age}
+            </section>
+            <section class="employee__computer">
+                ${employeeObject.firstName} is currently using a ${computer.year} ${computer.model}
+            </section>
+            <section class="employee__department">
+                Works in the ${department.name} department
+            </section>
         </div>
     `
 }
