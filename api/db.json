@@ -10,7 +10,7 @@
             "locationId": 2
         },
         {
-            "id": 1,
+            "id": 2,
             "firstName": "Tom",
             "lastName": "Thompson",
             "age": "22",
@@ -19,7 +19,7 @@
             "locationId": 3
         },
         {
-            "id": 1,
+            "id": 3,
             "firstName": "Richard(Dick)",
             "lastName": "Richardson",
             "age": "33",
@@ -28,7 +28,7 @@
             "locationId": 2
         },
         {
-            "id": 1,
+            "id": 4,
             "firstName": "Harry",
             "lastName": "Harrison",
             "age": "44",
@@ -37,7 +37,7 @@
             "locationId": 3
         },
         {
-            "id": 1,
+            "id": 5,
             "firstName": "Brant",
             "lastName": "Pippin",
             "age": "18",
@@ -103,6 +103,80 @@
         {
             "id": 3,
             "city": "Chattanooga"
+        }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "name": "DollyWorld"
+        },
+        {
+            "id": 2,
+            "name": "Aventure Chattanooga"
+        },
+            {
+            "id": 3,
+            "name": "Zip Nash"
+        },
+        {
+            "id": 4,
+            "name": "Nashville Builders"
+        },
+        {
+            "id": 5,
+            "name": "Knox Nursury"
+        }
+    ],
+    "employeeCustomers": [
+        {
+            "id": 1,
+            "customerId": 1,
+            "employeeId": 1
+        },
+        {
+            "id": 2,
+            "customerId": 5,
+            "employeeId": 1
+        },
+        {
+            "id": 3,
+            "customerId": 2,
+            "employeeId": 2
+        },
+        {
+            "id": 4,
+            "customerId": 3,
+            "employeeId": 2
+        },
+        {
+            "id": 5,
+            "customerId": 1,
+            "employeeId": 3
+        },
+        {
+            "id": 6,
+            "customerId": 5,
+            "employeeId": 3
+        },
+        {
+            "id": 7,
+            "customerId": 2,
+            "employeeId": 4
+        },
+        {
+            "id": 8,
+            "customerId": 3,
+            "employeeId": 4
+        },
+        {
+            "id": 9,
+            "customerId": 3,
+            "employeeId": 5
+        },
+        {
+            "id": 10,
+            "customerId": 4,
+            "employeeId": 5
         }
     ]
 }

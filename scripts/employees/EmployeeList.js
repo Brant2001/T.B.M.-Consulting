@@ -1,3 +1,8 @@
+/*
+    This module is resposible for receiving other modules and 
+    manipulating them to render our employee list to the DOM
+*/
+
 import { getEmployees, useEmployees } from "./EmployeeDataProvider.js";
 import { useComputers } from "../computers/ComputerDataProvider.js";
 import { Employee } from "./Employee.js";
