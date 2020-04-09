@@ -8,6 +8,8 @@ import { useComputers } from "../computers/ComputerDataProvider.js";
 import { Employee } from "./Employee.js";
 import { useDepartments } from "../departments/DepartmentDataProvider.js";
 import { useLocations } from "../locations/LocationsDataProvider.js";
+import { useCustomers } from "../customers/CustomerDataProvider.js";
+import { useEmployeeCustomer } from "../EmployeeCustomerDataProvider.js";
 
 const contentTarget = document.querySelector(".employeesContainer");
 
@@ -16,33 +18,47 @@ const render = () => {
     const allTheEmployees = useEmployees();
     const allTheComputers = useComputers();
     const allTheDepartments = useDepartments();
-    const allTheLocations = useLocations()
+    const allTheLocations = useLocations();
+    const allTheCustomers = useCustomers();
+    const employeeCustomers = useEmployeeCustomer()
 
-    contentTarget.innerHTML = allTheEmployees
-      .map((currentEmployeeObject) => {
-        const theFoundComputer = allTheComputers.find(
-          (currentComputerObject) => {
-            return (
-              currentEmployeeObject.computerId === currentComputerObject.id
-            );
-          }
-        );
-        const theFoundDepartment = allTheDepartments.find(
-          (currentDepartmentObject) => {
-            return (
-              currentEmployeeObject.departmentId === currentDepartmentObject.id
-            );
-          }
-        );
-        const theFoundLocation = allTheLocations.find(
-          (currentLocationObject) => {
-            return (
-              currentEmployeeObject.locationId === currentLocationObject.id
-            );
-          }
-        );
-        const employeeHTML = Employee(currentEmployeeObject, theFoundComputer, theFoundDepartment, theFoundLocation)
-        return employeeHTML
+    contentTarget.innerHTML = allTheEmployees.map(
+        (currentEmployeeObject) => {
+          const theFoundComputer = allTheComputers.find(
+            (currentComputerObject) => {
+              return (
+                currentEmployeeObject.computerId === currentComputerObject.id
+              );
+            }
+          );
+          const theFoundDepartment = allTheDepartments.find(
+            (currentDepartmentObject) => {
+              return (
+                currentEmployeeObject.departmentId === currentDepartmentObject.id
+              );
+            }
+          );
+          const theFoundLocation = allTheLocations.find(
+            (currentLocationObject) => {
+              return (
+                currentEmployeeObject.locationId === currentLocationObject.id
+              );
+            }
+          );
+          const filteredRelationships = employeeCustomers.filter(
+            (employeeCustomerRelationship) => {
+              return  currentEmployeeObject.Id === employeeCustomerRelationship.employeeId
+            }
+          )
+          const theFinalCustomerObjects = filteredRelationships.map(
+            relationship => {
+              const wantedCustomer = allTheCustomers.find(customer => customer.id === relationship.customer.id) 
+              return wantedCustomer
+            }
+          )
+
+          const employeeHTML = Employee(currentEmployeeObject, theFoundComputer, theFoundDepartment, theFoundLocation, theFinalCustomerObjects)
+          return employeeHTML
       }).join("");  
   });
 };
