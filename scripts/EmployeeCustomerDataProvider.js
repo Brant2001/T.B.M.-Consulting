@@ -1,3 +1,9 @@
+/*
+    This module is resposible for the managment 
+    and operation of the department data
+*/
+
+// Sets the value of "departments" to an empty array
 let employeeCustomer = []
 
 // this grabs the employeeCustomer from the server

@@ -47,12 +47,12 @@ const render = () => {
           );
           const filteredRelationships = employeeCustomers.filter(
             (employeeCustomerRelationship) => {
-              return  currentEmployeeObject.Id === employeeCustomerRelationship.employeeId
+              return  currentEmployeeObject.id === employeeCustomerRelationship.employeeId
             }
           )
           const theFinalCustomerObjects = filteredRelationships.map(
             relationship => {
-              const wantedCustomer = allTheCustomers.find(customer => customer.id === relationship.customer.id) 
+              const wantedCustomer = allTheCustomers.find(customer => customer.id === relationship.customerId) 
               return wantedCustomer
             }
           )
