@@ -1,9 +1,9 @@
 /*
     This module is resposible for the managment 
-    and operation of the department data
+    and operation of the relationship data
 */
 
-// Sets the value of "departments" to an empty array
+// Sets the value of "employeeCustomer" to an empty array
 let employeeCustomer = []
 
 // this grabs the employeeCustomer from the server
@@ -15,4 +15,5 @@ export const getEmployeeCustomer = () => {
         })
 }
 
+// Provides a copy of our data and exports it to be used other places
 export const useEmployeeCustomer = () => employeeCustomer.slice()

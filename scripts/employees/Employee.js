@@ -1,3 +1,8 @@
+/*
+    This module is responsible for the HTML 
+    representation of a single employee and 
+    will create it and export it.
+*/
 export const Employee = (employeeObject, computer, department, location, customers) => {
     return `
         <div class="employee">
