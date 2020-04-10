@@ -59,7 +59,8 @@ const render = () => {
 
           const employeeHTML = Employee(currentEmployeeObject, theFoundComputer, theFoundDepartment, theFoundLocation, theFinalCustomerObjects)
           return employeeHTML
-      }).join("");  
+        }
+    ).join("");  
   });
 };
 
